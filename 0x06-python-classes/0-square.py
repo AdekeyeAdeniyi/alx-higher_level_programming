@@ -1,11 +1,7 @@
 #!/usr/bin/python3
+""" Domenation for square class """
 
-"""Documentation for a square class"""
 
-
-class Square():
-    """ Square class of a quadrilateral with four equal sides
-        Attributes:
-              None
-    """
+class Square:
+    """ Square class without attributes"""
     pass
