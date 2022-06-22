@@ -19,7 +19,8 @@ class Square:
         """
         if(isinstance(size, int)):
             """
-                Checking if size value is an integer greater than or equal to zero
+                Checking if size value is an integer greater than or equal to
+                zero
             """
             if(size < 0):
                 raise ValueError("size must be >= 0")
