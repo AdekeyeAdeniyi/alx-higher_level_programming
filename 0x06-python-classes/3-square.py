@@ -10,7 +10,7 @@ class Square:
         Methods:
             __init__
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
             Intializing size atrribute for every Square instance
             Args:
