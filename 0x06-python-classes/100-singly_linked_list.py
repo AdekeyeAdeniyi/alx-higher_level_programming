@@ -45,7 +45,7 @@ class Node:
 
 class SinglyLinkedList:
     """ Singly linked list.
-    Private instance attribute: head.
+    Private instance attribute: head....
     Simple instantiation.
     Public instance method: def sorted_insert(self, value).
     """
