@@ -4,12 +4,12 @@ console.log(dict);
 
 const newDict = {};
 
-for (const [key, value] of Object.entries(dict)) {
-  if (!newDict[value]) {
-    newDict[value] = [];
-    newDict[value].push(key);
+for (const key in dict) {
+  if (!newDict[dict[key]]) {
+    newDict[dict[key]] = [];
+    newDict[dict[key]].push(key);
   } else {
-    newDict[value].push(key);
+    newDict[dict[key]].push(key);
   }
 }
 
