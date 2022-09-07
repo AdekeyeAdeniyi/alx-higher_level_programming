@@ -1,7 +1,5 @@
 #!/usr/bin/node
 const dict = require('./100-data').dict;
-console.log(dict);
-
 const newDict = {};
 
 for (const key in dict) {
