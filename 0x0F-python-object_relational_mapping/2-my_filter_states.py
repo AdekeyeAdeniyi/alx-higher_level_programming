@@ -23,7 +23,9 @@ if __name__ == '__main__':
         WHERE name LIKE BINARY '{}'
         ORDER BY id ASC """.format(sys.argv[4])
 
-    data = cursor.execute(sql)
+    cursor.execute(sql)
+
+    data = cursor.fetchall()
 
     for row in data:
         print(row)
