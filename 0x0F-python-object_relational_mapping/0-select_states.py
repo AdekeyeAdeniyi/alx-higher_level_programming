@@ -1,25 +1,19 @@
+#!/usr/bin/python3
 """
     Python that script that lists all states from the database hbtn_0e_0_usa
 
 """
-from sys import argv
+
 import MySQLdb
+from sys import argv
 
-
-
-if __name__ == "__main__":    
-    try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],passwd=argv[2], db=argv[3], charset="utf8")
-        queries = db.cursor()
-
-        queries.execute("SELECT * FROM user ORDER BY id ASC")
-
-        rows = queries.fetchall()
-
-        for row in rows:
-            print(row)
-        
-        queries.close()
-        db.close()
-    except Exception as ex:
-        print("Connection could not be made due to the following error: \n", ex)
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
+    db.close()
