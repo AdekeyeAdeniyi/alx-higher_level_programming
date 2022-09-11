@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 """
-    A script that lists all states from the database hbtn_0e_0_usa
-    With capital `N`
+    This script takes in an argument and
+    displays all values in the states
+    where `name` matches the argument
+    from the database `hbtn_0e_0_usa`.
 """
 
 
@@ -15,11 +17,10 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
 
     cur = db.cursor()
-    sql =   "SELECT * FROM states \
-            WHERE name = '{}' \
-            ORDER BY states.id ASC".format(argv[4])
 
-    cur.execute(sql)
+    cur.execute("SELECT * FROM states \
+                WHERE name = '{}' \
+                ORDER BY states.id ASC".format(argv[4]))
 
     rows = cur.fetchall()
 
@@ -28,3 +29,4 @@ if __name__ == '__main__':
 
     cur.close()
     db.close()
+    
