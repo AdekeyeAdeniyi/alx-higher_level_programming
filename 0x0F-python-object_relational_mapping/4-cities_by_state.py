@@ -19,12 +19,17 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cur.execute("""SELECT 
-                c.id, c.name, s.name
-                FROM cities AS c
-                JOIN states AS s
-                ON c.state_id == s.id 
-                ORDER BY c.id ASC
+    cur.execute("""
+                SELECT 
+                    c.id, c.name, s.name
+                FROM 
+                    cities AS c
+                JOIN 
+                    states AS s
+                ON 
+                    c.state_id = s.id 
+                ORDER BY 
+                    c.id ASC
                 """)
 
     rows = cur.fetchall()
