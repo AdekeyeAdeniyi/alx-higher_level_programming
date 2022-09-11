@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Script that takes in the name of a state as an argument 
-and lists all cities of that state, 
-using the database hbtn_0e_4_usa
+This script  takes in the name of a state
+as an argument and lists all cities of that
+state, using the database `hbtn_0e_4_usa`.
 """
 
 import MySQLdb
@@ -27,12 +27,12 @@ if __name__ == '__main__':
                 states
             ON
                 cities.state_id = states.id
-            WHERE 
+            WHERE
                 states.name LIKE BINARY %(state_name)s
             ORDER BY
                 cities.id ASC
         """, {
-            'state_name' : argv[4]
+            'state_name': argv[4]
         })
 
         rows = cur.fetchall()
