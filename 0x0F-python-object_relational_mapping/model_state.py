@@ -25,7 +25,7 @@ class State(Base):
         name : str
             The name of the state
     """
-    __tablename__ = 'States'
+    __tablename__ = 'states'
 
     id = Column(Integer, primary_key = True)
     name = Column(String(225), nullable = False)
@@ -41,10 +41,3 @@ class State(Base):
         """
         self.id = id,
         self.name = name
-
-    def __repr__(self):
-        """Prints a string format of class
-        """
-        return f'<Person id={self.id}, \
-                first_name={self.first_name}, \
-                last_name={self.last_name}, city={self.city}>'
