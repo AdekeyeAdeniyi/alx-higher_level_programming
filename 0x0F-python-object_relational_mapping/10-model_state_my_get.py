@@ -22,4 +22,4 @@ if __name__ == "__main__":
     if data is None:
         print('Not found')
     else:
-        print('{0}: {1}'.format(data.id, data.name))
+        print('{0}'.format(data.id))
