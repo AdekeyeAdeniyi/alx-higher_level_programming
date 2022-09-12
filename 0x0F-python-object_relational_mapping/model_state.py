@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """
-    Python file that contains the class 
-    definition of a State and a 
-    Base for MySQLAlchemy ORM
+Python file that contains the class 
+definition of a State and a 
+Base for MySQLAlchemy ORM
 """
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import  Column, Integer, String
 
-#MANAGE TABLES
 Base = declarative_base()
+
 class State(Base):
     """An ORM class for state database
+    
     Attributes
     ----------
     __tablename__: str
