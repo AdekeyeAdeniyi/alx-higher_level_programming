@@ -18,10 +18,11 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(City, State).join(State)
+    queries = session.query(City, State).filter(
+        City.state_id == State.id).all()
 
-    for _c, _s in query.all():
-        print("{}: ({:d}) {}".format(_s.name, _c.id, _c.name))
+    for _city, _state in queries:
+        print('{0}: ({1}) {2}'.format(_state.name, _city.id, _city.name))
 
     session.commit()
     session.close()
