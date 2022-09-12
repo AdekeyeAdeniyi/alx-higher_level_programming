@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    rows = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    rows = session.query(State).filter(State.name.like('%a%')) \
+    .order_by(State.id)
 
     for data in rows:
         print('{0}: {1}'.format(data.id, data.name))
