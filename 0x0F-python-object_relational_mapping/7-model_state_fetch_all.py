@@ -3,7 +3,6 @@
 This script list of state objects
 from the database hbtn_0e_6_usa
 """
-
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -19,4 +18,4 @@ if __name__ == "__main__":
     session = Session()
 
     for data in session.query(State).order_by(State.id):
-        print('{0}:{1}'.format(data.id, data.name))
+        print('{0}: {1}'.format(data.id, data.name))
