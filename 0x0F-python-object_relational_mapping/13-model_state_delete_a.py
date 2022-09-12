@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-This script update state objects
-with name in database hbtn_0e_6_usa
+This script delet state objects
+which conatains letter `a`
+in database hbtn_0e_6_usa
 """
 from sys import argv
 from unicodedata import name
@@ -18,7 +19,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).where(State.id == 2).first()
-    state.name = 'New Mexico'
+    rows = session.query(State).filter(State.name.contains('a'))
+    
+    for data in rows:
+        session.delete(data)
     session.commit()
     session.close()
