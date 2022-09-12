@@ -5,13 +5,12 @@ from the database `hbtn_0e_14_usa`.
 """
 
 from sys import argv
-from model_state import Base, State
-from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+from model_city import City
 
 if __name__ == "__main__":
-
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         argv[1], argv[2], argv[3])
     engine = create_engine(db_uri)
@@ -19,10 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(City, State).join(State)
+    queries = session.query(City, State).filter( \
+        City.state_id == State.id).all()
 
-    for _c, _s in query.all():
-        print("{}: ({:d}) {}".format(_s.name, _c.id, _c.name))
-
-    session.commit()
-    session.close()
+    for _city, _state in queries:
+        print(f'{_state.name}: ({_city.id}) {_city.name}')
