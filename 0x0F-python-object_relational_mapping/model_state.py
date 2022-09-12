@@ -11,33 +11,30 @@ from sqlalchemy import  Column, Integer, String
 Base = declarative_base()
 
 class State(Base):
-    """
-        An ORM class for state database
+    """An ORM class for state database
 
-        ...
-
-        Attributes
-        ----------
-        __tablename__: str
-            Name of table
-        id: integr
-            The state index number
-        name : str
-            The name of the state
+    Attributes
+    ----------
+    __tablename__: str
+        Name of table
+    id: integr
+        The state index number
+    name : str
+        The name of the state
     """
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key = True)
-    name = Column(String(225), nullable = False)
+    name = Column(String(128), nullable = False)
 
     def __init__(self, id, name):
         """
-            Parameters
-            ----------
-            id: integr
-                The state index number
-            name : str
-                The name of the state
+        Parameters
+        ----------
+        id: integr
+            The state index number
+        name : str
+            The name of the state
         """
         self.id = id,
         self.name = name
