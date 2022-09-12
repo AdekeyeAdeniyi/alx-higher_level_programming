@@ -13,14 +13,10 @@ Base = declarative_base()
 class State(Base):
     """An ORM class for state database
 
-    Attributes
-    ----------
-    __tablename__: str
-        Name of table
-    id: integr
-        The state index number
-    name : str
-        The name of the state
+    Attributes:
+    __tablename__ (str): Name of table
+    id (int): The state index number
+    name (str): The name of the state
     """
     __tablename__ = 'states'
 
