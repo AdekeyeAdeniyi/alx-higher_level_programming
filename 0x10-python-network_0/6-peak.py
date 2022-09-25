@@ -1,14 +1,11 @@
+
 #!/usr/bin/python3
 
-def find_peak(list_of_integers):
-    """Function that finds a peak in a list of unsorted integer
-    
-    Args
-        list_of_integers(int): unsorted integer list
-    Returns:
-        Peak value or None
+""" function that finds a peak in a list of unsorted integers."""
 
-    """
+
+def find_peak(list_of_integers):
+    """Finds a peak in list_of_integers"""
 
     if list_of_integers is None or list_of_integers == []:
         return None
