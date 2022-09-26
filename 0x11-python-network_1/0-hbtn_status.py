@@ -2,14 +2,10 @@
 
 from urllib import request
 
-url = 'https://alx-intranet.hbtn.io/status'
-
-req = request.Request(url)
-
 if __name__ == "__main__":
-    with request.urlopen(req) as response:
+    with request.urlopen("https://alx-intranet.hbtn.io/status") as response:
         html = response.read()
         print("Body response:")
-        print("\t - type:", type(html))
-        print("\t - content:", html)
-        print("\t - utf8 content:", html.decode('UTF-8'))
+        print("\t- type:", type(html))
+        print("\t- content:", html)
+        print("\t- utf8 content:", html.decode('UTF-8'))
