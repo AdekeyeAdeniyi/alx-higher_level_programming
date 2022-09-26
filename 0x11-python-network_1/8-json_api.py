@@ -9,10 +9,9 @@ if __name__ == "__main__":
     arg = ""
     if len(argv) == 2:
         arg = argv[1]
-    
     try:
-        response = requests.post('http://0.0.0.0:5000/search_user', data={'q': arg})
-        data = response.json
+        r = requests.post('http://0.0.0.0:5000/search_user', data={'q': arg})
+        data = r.json
         if data:
             print("[{}] {}".format(data.get('id'), data.get('name')))
         else:
