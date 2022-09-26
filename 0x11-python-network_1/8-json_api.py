@@ -12,7 +12,7 @@ if __name__ == "__main__":
         arg = argv[1]
     try:
         r = requests.post('http://0.0.0.0:5000/search_user', data={'q': arg})
-        data = r.json
+        data = r.json()
         if data:
             print("[{}] {}".format(data.get('id'), data.get('name')))
         else:
