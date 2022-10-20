@@ -1,7 +1,6 @@
 #!/usr/bin/node
-/* Read and print content in a file*/
+/* Read and print content in a file */
 
-const fileName = argv[2];
 const file = process.argv[2];
 const fs = require('fs');
 
